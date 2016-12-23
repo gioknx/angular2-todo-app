@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/spacing/spacing.css";
+
+body .container {
+  padding-top: 40px;
+  background-color: white;
+}
+
+/*
+ * Responsive stypes
+ */
+@media (max-width:980px) {
+  body .container {
+    padding-top: 0;
+  }
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+}
+
+/* END: @media (max-width: 980px) */

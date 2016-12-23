@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-6">  
+      <app-task-list (taskSelected)="taskSelected = $event"></app-task-list>
+    </div>
+    <div class="col-sm-6">  
+      <app-task-details [task]="taskSelected"></app-task-details>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <app-create-task></app-create-task>
+    </div>
+
+
+
+
+
+  </div>
+

@@ -1,0 +1,7 @@
+
+
+<div class="card">
+  <ul class="list-group list-group-flush">
+  <app-task (click)="onClickedTask(task)" *ngFor="let task of tasks" [task]="task"></app-task>
+  </ul>
+</div>
