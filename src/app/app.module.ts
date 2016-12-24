@@ -9,6 +9,9 @@ import { TaskComponent } from './task-list/task.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 
+
+import { TaskService } from './services/task.service';
+
 @NgModule({
   declarations: [
     AppComponent,

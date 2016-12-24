@@ -20,10 +20,15 @@ export class TaskListComponent implements OnInit {
 
   ngOnInit() {
       this.tasks[0].complete();
-      console.log("Completou task #01");
   }
 
   onClickedTask(task){
+    console.log("OnClickedTask: ", task);
     this.taskSelected.emit(task);
+  }
+
+  addTaskToList(task){
+    console.log("Task: ", task);
+    this.tasks.push.apply(task);
   }
 }

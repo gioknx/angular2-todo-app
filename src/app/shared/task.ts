@@ -8,9 +8,6 @@ export class Task {
   constructor(private title:string, private desc:string){
     this.completed = false;
     this.timeSpent = 0;
-    this.dueDate = "00/000/0000";
-    this.dueTime = "00:00"
-
   }
 
   complete(){
