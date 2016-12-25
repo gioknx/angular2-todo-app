@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Task } from "../shared/task";
 
+import { TaskService } from './../services/task.service';
+
 @Component({
   selector: 'app-create-task',
   templateUrl: './create-task.component.html'
@@ -13,10 +15,11 @@ export class CreateTaskComponent implements OnInit {
   @Output() onCreatedTask = new EventEmitter<Task>();
 
   onSubmit(){
-    console.log(this.task);
     this.onCreatedTask.emit(this.task);
+    this.taskService.addTask(this.task);
+    this.task = new Task("","");
   }
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
   }

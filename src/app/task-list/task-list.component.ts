@@ -2,24 +2,26 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Task } from "../shared/task";
 
+import { TaskService } from './../services/task.service';
+
+
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html'
 })
 export class TaskListComponent implements OnInit {
-  
+
   @Output() taskSelected = new EventEmitter<Task>();
   
-  tasks: Task[] = [
-  new Task("Limpar chao", "Favor limpar o chao"),
-  new Task("Cagar no chao", "Favor limpar o chao"),
-  new Task("Varrer o chao", "Favor varrer o chao")];
+  private tasks:Task[];
 
-
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
-      this.tasks[0].complete();
+
+    this.tasks = this.taskService.tasks;
+    console.log("NgOntinit");
+    this.tasks[0].complete();
   }
 
   onClickedTask(task){
@@ -28,7 +30,8 @@ export class TaskListComponent implements OnInit {
   }
 
   addTaskToList(task){
-    console.log("Task: ", task);
-    this.tasks.push.apply(task);
+    this.taskService.addTask(task);
+    console.log("Tasks: ", this.tasks);
+
   }
 }

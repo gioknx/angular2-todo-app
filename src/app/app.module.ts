@@ -25,7 +25,7 @@ import { TaskService } from './services/task.service';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

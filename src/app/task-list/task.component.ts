@@ -10,6 +10,15 @@ import { Task } from "../shared/task";
 
 export class TaskComponent implements OnInit {
   @Input() task: Task;
+  private _showCompleteButton: Boolean = false;
+
+  get showCompleteButton() : Boolean {
+    return this._showCompleteButton;
+  }
+  set showCompleteButton(value : Boolean) {
+    console.log(value);
+    this._showCompleteButton = value;
+  }
 
   constructor() { 
   }

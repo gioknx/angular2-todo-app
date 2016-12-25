@@ -1,10 +1,14 @@
 
-<li class="list-group-item mbs" [ngClass]="{' list-group-item-success': task.completed }"> {{task.title}} 
+<li on-mouseover="showCompleteButton = true" on-mouseleave="showCompleteButton = false" class="list-group-item mbs" 
+[ngClass]="{' list-group-item-success': task.completed }"> {{task.title}} 
 
-  <div class="pull-right" [ngSwitch]="task?.completed">
-    <span *ngSwitchCase="true" class="badge">{{task.timeSpent}}</span>
-    <span *ngSwitchDefault>{{task.dueDate}}</span>
-  </div>
+<div class="pull-right" [ngSwitch]="task?.completed">
+  <span *ngSwitchCase="true" class="badge">{{task.timeSpent}}</span>
+  <span *ngSwitchDefault>
+    <span [hidden]="!showCompleteButton">TERMINAR</span>
+    <span [hidden]="showCompleteButton"> {{task.dueDate}}</span>
+  </span>
+</div>
 
 </li> 
 
