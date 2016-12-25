@@ -18,20 +18,11 @@ export class TaskListComponent implements OnInit {
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
-
     this.tasks = this.taskService.tasks;
-    console.log("NgOntinit");
     this.tasks[0].complete();
   }
 
   onClickedTask(task){
-    console.log("OnClickedTask: ", task);
     this.taskSelected.emit(task);
-  }
-
-  addTaskToList(task){
-    this.taskService.addTask(task);
-    console.log("Tasks: ", this.tasks);
-
   }
 }

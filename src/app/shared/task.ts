@@ -35,6 +35,6 @@ export class Task {
 
   complete(){
     this.completed = true;
-    // this.finishedAt = Date.now();
+    this.finishedAt = new Date();
   }
 }

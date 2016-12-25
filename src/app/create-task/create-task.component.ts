@@ -12,6 +12,18 @@ export class CreateTaskComponent implements OnInit {
 
   task: Task = new Task("", "");  
 
+
+
+  private _showCreateForm: Boolean = false;
+  get showCreateForm(): Boolean{
+    return this._showCreateForm;
+  }
+
+  set showCreateForm(value: Boolean){
+    this._showCreateForm = value;
+  }
+
+
   @Output() onCreatedTask = new EventEmitter<Task>();
 
   onSubmit(){
