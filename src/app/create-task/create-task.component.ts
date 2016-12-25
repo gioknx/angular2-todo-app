@@ -15,7 +15,9 @@ export class CreateTaskComponent implements OnInit {
   @Output() onCreatedTask = new EventEmitter<Task>();
 
   onSubmit(){
-    this.onCreatedTask.emit(this.task);
+    // Calc dueTo property based on dueDate and dueTime
+    this.task.setDueTo();
+
     this.taskService.addTask(this.task);
     this.task = new Task("","");
   }

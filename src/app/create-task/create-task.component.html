@@ -13,7 +13,7 @@
         <label for="">Due date</label>
         <div class='input-group date'>
 
-          <input type="text" name="dueDate" class="form-control" id="dueDate" placeholder="mm/dd/yyyy" [(ngModel)]="task.dueDate">
+          <input type="date" name="dueDate" class="form-control" id="dueDate" placeholder="mm/dd/yyyy" [(ngModel)]="task.dueDate">
           <span class="input-group-addon">
             <span class="glyphicon glyphicon-calendar">
             </span>
@@ -26,6 +26,7 @@
         <input type="text" name="dueTime" class="form-control" id="dueDate" placeholder="HH:MM" [(ngModel)]="task.dueTime">
 
       </div>
+
 
       <button type="submit" class="btn btn-primary" [disabled]="!f.valid" >Create</button>
     </form>

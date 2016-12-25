@@ -10,16 +10,18 @@ import { Task } from "../shared/task";
 
 export class TaskComponent implements OnInit {
   @Input() task: Task;
-  private _showCompleteButton: Boolean = false;
+  private _hover: Boolean = false;
 
-  get showCompleteButton() : Boolean {
-    return this._showCompleteButton;
+  get hover() : Boolean {
+    return this._hover;
   }
-  set showCompleteButton(value : Boolean) {
-    console.log(value);
-    this._showCompleteButton = value;
+  set hover(value : Boolean) {
+    this._hover = value;
   }
 
+  onCompleteClick(){
+    this.task.complete();
+  }
   constructor() { 
   }
 
